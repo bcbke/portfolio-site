@@ -60,13 +60,18 @@ header, section, footer {
 
 .hero {
   text-align: center;
+  padding: 100px 0;
 }
 
-.hero img {
-  width: 120px;
-  height: 120px;
-  border-radius: 100px;
-  margin-bottom: 1rem;
+.hero h1 {
+  font-size: 3rem;
+  color: var(--pearl);
+}
+
+.hero p {
+  color: var(--gray);
+  font-size: 1.2rem;
+  margin-top: 1rem;
 }
 
 h1 {
