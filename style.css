@@ -1,72 +1,136 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BlackSpark Creative</title>
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Cal+Sans:wght@400;700&family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <!-- Hero Section -->
-  <header class="hero">
-    <img src="images/profile.jpg" alt="BlackSpark Creative" />
-    <h1>BlackSpark Creative</h1>
-    <h2>Design. Strategy. Impact.</h2>
-    <p>We create visually striking and strategically sound design solutions that ignite engagement and elevate brands.</p>
-    <a href="documents/BlackSpark_CV.pdf" class="btn" download>Download Resume</a>
-  </header>
+/* style.css for BlackSpark Creative */
 
-  <!-- About Section -->
-  <section class="about">
-    <h2>About</h2>
-    <p>We are a multidisciplinary creative studio focused on branding, digital content, and visual strategy. With a strong foundation in graphic design and storytelling, BlackSpark Creative helps brands find clarity, personality, and power in their visual communication.</p>
-  </section>
+:root {
+  --black: #000000;
+  --gray: #999999;
+  --pearl: #f4f4f4;
+}
 
-  <!-- Work Section -->
-  <section class="work">
-    <h2>Work</h2>
-    <div class="projects">
-      <div class="project">
-        <img src="images/project1.jpg" alt="Project 1" />
-        <h3>Real Estate Social Kit</h3>
-        <p>A stylish content system designed for property brands to boost visibility across Instagram and Facebook. Designed templates, icons, and copy.</p>
-      </div>
-      <div class="project">
-        <img src="images/project2.jpg" alt="Project 2" />
-        <h3>Brand Identity – Turfoota</h3>
-        <p>A sporty, energetic brand for a digital platform connecting footballers with nearby pitches. Logo design, typography system, and brand guidelines.</p>
-      </div>
-    </div>
-  </section>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  <!-- Services Section -->
-  <section class="services">
-    <h2>Services</h2>
-    <ul>
-      <li>Brand Identity & Logo Design</li>
-      <li>Social Media Kits</li>
-      <li>Template Design for Creators</li>
-      <li>Website UI Mockups</li>
-      <li>Creative Strategy & Copy</li>
-    </ul>
-  </section>
+body {
+  background-color: var(--black);
+  color: var(--pearl);
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
 
-  <!-- Contact Section -->
-  <section class="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:hello@blacksparkcreative.com">hello@blacksparkcreative.com</a></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/bcb-ke-3205a1203" target="_blank">bcb-ke</a></p>
-  </section>
+h1, h2, h3 {
+  font-family: 'Cal Sans', sans-serif;
+}
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 BlackSpark Creative. All rights reserved.</p>
-  </footer>
+nav {
+  background-color: var(--black);
+  text-align: center;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
 
-  <!-- Optional JS for scroll animations (only needed if used) -->
-  <script src="script.js"></script>
-</body>
-</html>
+nav a {
+  color: var(--pearl);
+  text-decoration: none;
+  margin: 0 1rem;
+  font-weight: 600;
+}
+
+header, section, footer {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+
+.visible {
+  opacity: 1 !important;
+  transform: translateY(0px) !important;
+}
+
+.hero {
+  text-align: center;
+}
+
+.hero img {
+  width: 120px;
+  height: 120px;
+  border-radius: 100px;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2rem;
+  color: var(--pearl);
+}
+
+h2 {
+  font-size: 1.2rem;
+  color: var(--gray);
+  margin: 1rem 0;
+}
+
+p {
+  color: var(--gray);
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background: var(--gray);
+  color: var(--black);
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+.projects {
+  display: grid;
+  gap: 2rem;
+}
+
+.project img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li::before {
+  content: "\2022 ";
+  color: var(--pearl);
+  margin-right: 0.5rem;
+}
+
+a {
+  color: var(--pearl);
+}
+
+footer {
+  text-align: center;
+  color: var(--gray);
+  font-size: 0.8rem;
+  padding-bottom: 4rem;
+}
+
+#preloader {
+  background: var(--black);
+  color: var(--pearl);
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
