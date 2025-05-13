@@ -1,147 +1,72 @@
-/* === Base Typography & Layout === */
-:root {
-  --black: #000000;
-  --gray: #999999;
-  --pearl: #f4f4f4;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BlackSpark Creative</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cal+Sans:wght@400;700&family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Hero Section -->
+  <header class="hero">
+    <img src="images/profile.jpg" alt="BlackSpark Creative" />
+    <h1>BlackSpark Creative</h1>
+    <h2>Design. Strategy. Impact.</h2>
+    <p>We create visually striking and strategically sound design solutions that ignite engagement and elevate brands.</p>
+    <a href="documents/BlackSpark_CV.pdf" class="btn" download>Download Resume</a>
+  </header>
 
-  --heading-font: 'Cal Sans', sans-serif;
-  --body-font: 'DM Sans', sans-serif;
-}
+  <!-- About Section -->
+  <section class="about">
+    <h2>About</h2>
+    <p>We are a multidisciplinary creative studio focused on branding, digital content, and visual strategy. With a strong foundation in graphic design and storytelling, BlackSpark Creative helps brands find clarity, personality, and power in their visual communication.</p>
+  </section>
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+  <!-- Work Section -->
+  <section class="work">
+    <h2>Work</h2>
+    <div class="projects">
+      <div class="project">
+        <img src="images/project1.jpg" alt="Project 1" />
+        <h3>Real Estate Social Kit</h3>
+        <p>A stylish content system designed for property brands to boost visibility across Instagram and Facebook. Designed templates, icons, and copy.</p>
+      </div>
+      <div class="project">
+        <img src="images/project2.jpg" alt="Project 2" />
+        <h3>Brand Identity – Turfoota</h3>
+        <p>A sporty, energetic brand for a digital platform connecting footballers with nearby pitches. Logo design, typography system, and brand guidelines.</p>
+      </div>
+    </div>
+  </section>
 
-html {
-  scroll-behavior: smooth;
-  background: var(--black);
-  color: var(--pearl);
-  font-size: 18px;
-}
+  <!-- Services Section -->
+  <section class="services">
+    <h2>Services</h2>
+    <ul>
+      <li>Brand Identity & Logo Design</li>
+      <li>Social Media Kits</li>
+      <li>Template Design for Creators</li>
+      <li>Website UI Mockups</li>
+      <li>Creative Strategy & Copy</li>
+    </ul>
+  </section>
 
-body {
-  font-family: var(--body-font);
-  line-height: 1.6;
-  background-color: var(--black);
-}
+  <!-- Contact Section -->
+  <section class="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:hello@blacksparkcreative.com">hello@blacksparkcreative.com</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/bcb-ke-3205a1203" target="_blank">bcb-ke</a></p>
+  </section>
 
-h1, h2, h3 {
-  font-family: var(--heading-font);
-  font-weight: 700;
-  color: var(--pearl);
-  margin-bottom: 1rem;
-}
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 BlackSpark Creative. All rights reserved.</p>
+  </footer>
 
-p, li {
-  color: var(--gray);
-  font-weight: 400;
-}
-
-/* === Layout Containers === */
-header,
-section,
-footer {
-  padding: 4rem 2rem;
-  max-width: 800px;
-  margin: 0 auto;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-section.visible,
-header.visible,
-footer.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* === Hero Section === */
-.hero {
-  text-align: center;
-  padding-top: 6rem;
-}
-
-.hero img {
-  width: 120px;
-  height: 120px;
-  border-radius: 100px;
-  margin-bottom: 1rem;
-}
-
-.btn {
-  display: inline-block;
-  padding: 0.7rem 1.4rem;
-  margin-top: 1.5rem;
-  background: var(--gray);
-  color: var(--black);
-  font-weight: 700;
-  text-decoration: none;
-  border-radius: 4px;
-}
-
-/* === Work / Projects === */
-.projects {
-  display: flex;
-  flex-direction: column;
-  gap: 4rem;
-  margin-top: 2rem;
-}
-
-.project img {
-  width: 100%;
-  border-radius: 8px;
-}
-
-.project h3 {
-  margin-top: 1rem;
-  font-size: 1.2rem;
-}
-
-/* === Services List === */
-ul {
-  list-style: none;
-  margin-top: 1rem;
-  padding-left: 0;
-}
-
-ul li::before {
-  content: "\2022 ";
-  color: var(--pearl);
-  margin-right: 0.5rem;
-}
-
-/* === Footer === */
-footer {
-  text-align: center;
-  font-size: 0.9rem;
-  color: var(--gray);
-  padding-bottom: 5rem;
-}
-
-/* === Responsive === */
-@media (max-width: 600px) {
-  header, section, footer {
-    padding: 3rem 1.2rem;
-  }
-
-  h1 {
-    font-size: 1.8rem;
-  }
-
-  .btn {
-    padding: 0.5rem 1rem;
-  }
-}
-
-/* === Reveal on Scroll === */
-window.addEventListener('scroll', () => {
-  document.querySelectorAll('section, header, footer').forEach(el => {
-    const top = el.getBoundingClientRect().top;
-    if (top < window.innerHeight - 100) {
-      el.classList.add('visible');
-    }
-  });
-});
+  <!-- Optional JS for scroll animations (only needed if used) -->
+  <script src="script.js"></script>
+</body>
+</html>
