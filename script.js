@@ -1,14 +1,28 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const tabs = document.querySelectorAll('.tabs li');
-  const contents = document.querySelectorAll('.tab-content');
+// script.js
 
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      contents.forEach(c => c.classList.remove('active'));
-      tabs.forEach(t => t.classList.remove('active'));
-      document.getElementById(tab.dataset.tab).classList.add('active');
-      tab.classList.add('active');
-    });
+// Fade-in elements on scroll
+const faders = document.querySelectorAll('.fade-in');
+
+const appearOptions = {
+  threshold: 0.1,
+  rootMargin: "0px 0px -100px 0px"
+};
+
+const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add('appear');
+    appearOnScroll.unobserve(entry.target);
   });
+}, appearOptions);
+
+faders.forEach(fader => {
+  appearOnScroll.observe(fader);
 });
 
+// Preloader
+window.addEventListener('load', () => {
+  const preloader = document.getElementById('preloader');
+  preloader.style.opacity = 0;
+  preloader.style.visibility = 'hidden';
+});
