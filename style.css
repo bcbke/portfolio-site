@@ -3,15 +3,82 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BCBKE Portfolio</title>
+  <title>BlackSpark Creative</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <script defer src="script.js"></script>
 </head>
 <body>
-  <header class="main-header">
-    <div class="container">
-     ...
-    }
-  ]
-}
+  <div id="preloader">Launching BlackSpark...</div>
+
+  <nav>
+    <a href="#home">Home</a>
+    <span class="divider">|</span>
+    <a href="#work">Work</a>
+    <span class="divider">|</span>
+    <a href="#clients">Clients</a>
+    <span class="divider">|</span>
+    <a href="#about">About</a>
+    <span class="divider">|</span>
+    <a href="#blog">Blog</a>
+    <span class="divider">|</span>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section class="home" id="home">
+    <div class="hero">
+      <h1>Designing Your Vision, Launching Your Brand</h1>
+      <p>Your destination for innovative design and strategic content.</p>
+    </div>
+  </section>
+
+  <section class="work" id="work">
+    <h2>Work</h2>
+    <div class="projects">
+      <div class="project">
+        <img src="images/project1.jpg" alt="Real Estate Social Kit" />
+        <h3>Real Estate Social Kit</h3>
+        <p>Strategic content system designed for property brands with editable templates and custom icons.</p>
+      </div>
+      <div class="project">
+        <img src="images/project2.jpg" alt="Turfoota Branding" />
+        <h3>Brand Identity – Turfoota</h3>
+        <p>Sporty, energetic brand system for a football app. Logo, typography, and guidelines crafted from scratch.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="clients" id="clients">
+    <h2>Clients</h2>
+    <div class="client-logos">
+      <img src="images/client1.png" alt="Client 1" />
+      <img src="images/client2.png" alt="Client 2" />
+      <img src="images/client3.png" alt="Client 3" />
+      <!-- Add more logos as needed -->
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <h2>About</h2>
+    <p>We are a multidisciplinary creative studio helping brands clarify, amplify, and express themselves visually. At BlackSpark Creative, we turn business goals into beautiful, strategic design stories that spark action.</p>
+  </section>
+
+  <section class="blog" id="blog">
+    <h2>Blog</h2>
+    <p>Coming soon: tips, insights, and inspiration for creative business owners and designers.</p>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:hello@blacksparkcreative.com">hello@blacksparkcreative.com</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/bcb-ke-3205a1203" target="_blank">bcb-ke</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 BlackSpark Creative. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
