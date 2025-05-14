@@ -1,84 +1,136 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BlackSpark Creative</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div id="preloader">Launching BlackSpark...</div>
+/* style.css */
 
-  <nav>
-    <a href="#home">Home</a>
-    <span class="divider">|</span>
-    <a href="#work">Work</a>
-    <span class="divider">|</span>
-    <a href="#clients">Clients</a>
-    <span class="divider">|</span>
-    <a href="#about">About</a>
-    <span class="divider">|</span>
-    <a href="#blog">Blog</a>
-    <span class="divider">|</span>
-    <a href="#contact">Contact</a>
-  </nav>
+body {
+  margin: 0;
+  font-family: 'DM Sans', sans-serif;
+  background-color: #000;
+  color: #fff;
+}
 
-  <section class="home" id="home">
-    <div class="hero">
-      <h1>Designing Your Vision, Launching Your Brand</h1>
-      <p>Your destination for innovative design and strategic content.</p>
-    </div>
-  </section>
+nav {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  background-color: #111;
+  font-family: 'Cal Sans', sans-serif;
+}
 
-  <section class="work" id="work">
-    <h2>Work</h2>
-    <div class="projects">
-      <div class="project">
-        <img src="images/project1.jpg" alt="Real Estate Social Kit" />
-        <h3>Real Estate Social Kit</h3>
-        <p>Strategic content system designed for property brands with editable templates and custom icons.</p>
-      </div>
-      <div class="project">
-        <img src="images/project2.jpg" alt="Turfoota Branding" />
-        <h3>Brand Identity – Turfoota</h3>
-        <p>Sporty, energetic brand system for a football app. Logo, typography, and guidelines crafted from scratch.</p>
-      </div>
-    </div>
-  </section>
+nav a {
+  color: #a3a3a3;
+  text-decoration: none;
+  margin: 0 0.5rem;
+  font-weight: 600;
+}
 
-  <section class="clients" id="clients">
-    <h2>Clients</h2>
-    <div class="client-logos">
-      <img src="images/client1.png" alt="Client 1" />
-      <img src="images/client2.png" alt="Client 2" />
-      <img src="images/client3.png" alt="Client 3" />
-      <!-- Add more logos as needed -->
-    </div>
-  </section>
+nav .divider {
+  color: #444;
+}
 
-  <section class="about" id="about">
-    <h2>About</h2>
-    <p>We are a multidisciplinary creative studio helping brands clarify, amplify, and express themselves visually. At BlackSpark Creative, we turn business goals into beautiful, strategic design stories that spark action.</p>
-  </section>
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+  background-color: #000;
+}
 
-  <section class="blog" id="blog">
-    <h2>Blog</h2>
-    <p>Coming soon: tips, insights, and inspiration for creative business owners and designers.</p>
-  </section>
+.hero h1 {
+  font-family: 'Cal Sans', sans-serif;
+  font-size: 3rem;
+  color: #fff;
+  margin-bottom: 1rem;
+}
 
-  <section class="contact" id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:hello@blacksparkcreative.com">hello@blacksparkcreative.com</a></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/bcb-ke-3205a1203" target="_blank">bcb-ke</a></p>
-  </section>
+.hero p {
+  color: #a3a3a3;
+  font-size: 1.2rem;
+}
 
-  <footer>
-    <p>&copy; 2025 BlackSpark Creative. All rights reserved.</p>
-  </footer>
+section {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
 
-  <script src="script.js"></script>
-</body>
-</html>
+h2 {
+  font-family: 'Cal Sans', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.project {
+  background-color: #111;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.project img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.project h3 {
+  color: #fff;
+  font-size: 1.25rem;
+  margin-top: 10px;
+}
+
+.project p {
+  color: #a3a3a3;
+}
+
+.client-logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.client-logos img {
+  max-height: 60px;
+  filter: grayscale(100%);
+  opacity: 0.8;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 0.875rem;
+  color: #a3a3a3;
+  background-color: #111;
+}
+
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: all 0.5s ease;
+  font-family: 'Cal Sans', sans-serif;
+  font-size: 1.25rem;
+}
+
+.appear {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.6s ease-in-out;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+}
