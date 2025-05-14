@@ -1,28 +1,17 @@
 // script.js
 
-// Fade-in elements on scroll
-const faders = document.querySelectorAll('.fade-in');
-
-const appearOptions = {
-  threshold: 0.1,
-  rootMargin: "0px 0px -100px 0px"
-};
-
-const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
-  entries.forEach(entry => {
-    if (!entry.isIntersecting) return;
-    entry.target.classList.add('appear');
-    appearOnScroll.unobserve(entry.target);
+document.addEventListener('DOMContentLoaded', () => {
+  const links = document.querySelectorAll('a[href^="#"]');
+  links.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) {
+        window.scrollTo({
+          top: target.offsetTop - 50,
+          behavior: 'smooth'
+        });
+      }
+    });
   });
-}, appearOptions);
-
-faders.forEach(fader => {
-  appearOnScroll.observe(fader);
-});
-
-// Preloader
-window.addEventListener('load', () => {
-  const preloader = document.getElementById('preloader');
-  preloader.style.opacity = 0;
-  preloader.style.visibility = 'hidden';
 });
