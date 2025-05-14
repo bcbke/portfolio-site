@@ -2,113 +2,48 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BlackSpark Creative</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BCBKE Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-  <div id="preloader">Loading BlackSpark…</div>
-
-  <nav>
-    <a href="#home">Home</a>
-    <span class="separator">|</span>
-    <a href="#work">Work</a>
-    <span class="separator">|</span>
-    <a href="#clients">Clients</a>
-    <span class="separator">|</span>
-    <a href="#about">About</a>
-    <span class="separator">|</span>
-    <a href="#blog">Blog</a>
-    <span class="separator">|</span>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <!-- Home Section (Minimal Welcoming Page) -->
-  <section class="home" id="home">
-    <div class="hero">
-      <h1>Welcome to BlackSpark Creative</h1>
-      <p>Your destination for innovative design and strategic content.</p>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#clients">Clients</a></li>
+      </ul>
+    </nav>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/yourprofile" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://www.behance.net/yourprofile" target="_blank"><i class="fab fa-behance"></i></a>
+      <a href="https://twitter.com/yourprofile" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.youtube.com/yourchannel" target="_blank"><i class="fab fa-youtube"></i></a>
     </div>
+  </header>
+
+  <section id="home" class="section black-bg" style="background-image: url('images/Section1-background.png');">
+    <h1>Home</h1>
+    <!-- Home content -->
   </section>
 
-  <!-- Work Section -->
-  <section class="work" id="work">
-    <h2>Work</h2>
-    <div class="projects">
-      <div class="project">
-        <img src="images/project1-image.jpeg" alt="Project 1" />
-        <h3>Real Estate Social Kit</h3>
-        <p>A stylish content system designed for property brands to boost visibility across Instagram and Facebook. Designed templates, icons, and copy.</p>
-      </div>
-      <div class="project">
-        <img src="images/project2-image.jpeg" alt="Project 2" />
-        <h3>Brand Identity – Turfoota</h3>
-        <p>A sporty, energetic brand for a digital platform connecting footballers with nearby pitches. Logo design, typography system, and brand guidelines.</p>
-      </div>
-    </div>
+  <section id="about" class="section grey-bg" style="background-image: url('images/Section2-background.png');">
+    <h1>About Us</h1>
+    <!-- About Us content -->
   </section>
 
-  <!-- Clients Section -->
-  <section class="clients" id="clients">
-    <h2>Our Clients</h2>
-    <div class="client">
-      <img src="images/client1-logo.jpeg" alt="Client 1 Logo" />
-    </div>
-    <div class="client">
-      <img src="images/client2-logo.jpeg" alt="Client 2 Logo" />
-    </div>
-    <div class="client">
-      <img src="images/client3-logo.jpeg" alt="Client 3 Logo" />
-    </div>
+  <section id="work" class="section white-bg" style="background-image: url('images/Section3-background.png');">
+    <h1>Work</h1>
+    <!-- Work content -->
   </section>
 
-  <!-- About Section -->
-  <section class="about" id="about">
-    <h2>About</h2>
-    <p>We are a multidisciplinary creative studio focused on branding, digital content, and visual strategy. With a strong foundation in graphic design and storytelling, BlackSpark Creative helps brands find clarity, personality, and power in their visual communication.</p>
+  <section id="clients" class="section black-bg" style="background-image: url('images/Section4-background.png');">
+    <h1>Clients</h1>
+    <!-- Clients content -->
   </section>
-
-  <!-- Blog Section -->
-  <section class="blog" id="blog">
-    <h2>Blog</h2>
-    <p>Coming soon: articles and resources on brand strategy, templates, and visual storytelling tips.</p>
-  </section>
-
-  <!-- Contact Section -->
-  <section class="contact" id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:hello@blacksparkcreative.com">hello@blacksparkcreative.com</a></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/bcb-ke-3205a1203" target="_blank">bcb-ke</a></p>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 BlackSpark Creative. All rights reserved.</p>
-  </footer>
-
-  <script>
-    // Fade-in on scroll
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, {
-      threshold: 0.1
-    });
-
-    document.querySelectorAll('section, header').forEach(section => {
-      observer.observe(section);
-    });
-
-    // Preloader
-    window.addEventListener('load', () => {
-      const preloader = document.getElementById('preloader');
-      if (preloader) {
-        preloader.style.display = 'none';
-      }
-    });
-  </script>
 </body>
 </html>
