@@ -1,116 +1,28 @@
-/* style.css */
+// script.js
 
-body {
-  margin: 0;
-  font-family: 'DM Sans', sans-serif;
-  background-color: #000;
-  color: #fff;
-}
+// Fade-in elements on scroll
+const faders = document.querySelectorAll('.fade-in');
 
-nav {
-  display: flex;
-  justify-content: center;
-  padding: 1rem;
-  font-family: 'Cal Sans', sans-serif;
-  background-color: #111;
-  border-bottom: 1px solid #333;
-}
+const appearOptions = {
+  threshold: 0.1,
+  rootMargin: "0px 0px -100px 0px"
+};
 
-nav a {
-  color: #fff;
-  margin: 0 0.8rem;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-weight: bold;
-}
+const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add('appear');
+    appearOnScroll.unobserve(entry.target);
+  });
+}, appearOptions);
 
-.divider {
-  color: #a3a3a3;
-}
+faders.forEach(fader => {
+  appearOnScroll.observe(fader);
+});
 
-#preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #000;
-  color: #a3a3a3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  font-family: 'Cal Sans', sans-serif;
-}
-
-.hero {
-  padding: 10vh 5vw;
-  text-align: center;
-}
-
-.hero h1 {
-  font-family: 'Cal Sans', sans-serif;
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  color: #a3a3a3;
-}
-
-section {
-  padding: 5rem 2rem;
-  max-width: 1200px;
-  margin: auto;
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.6s ease-in-out;
-}
-
-section.fade-in {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-h2 {
-  font-family: 'Cal Sans', sans-serif;
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-.projects, .client-logos-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-}
-
-.project, .client-logos-grid img {
-  background: #111;
-  padding: 1rem;
-  border-radius: 10px;
-  text-align: center;
-}
-
-.project img {
-  max-width: 100%;
-  border-radius: 8px;
-}
-
-.client-logos-grid img {
-  max-width: 100%;
-  max-height: 100px;
-  object-fit: contain;
-  background-color: #fff;
-  padding: 1rem;
-  border-radius: 10px;
-}
-
-footer {
-  text-align: center;
-  padding: 2rem;
-  background-color: #111;
-  color: #a3a3a3;
-  font-size: 0.9rem;
-}
+// Preloader
+window.addEventListener('load', () => {
+  const preloader = document.getElementById('preloader');
+  preloader.style.opacity = 0;
+  preloader.style.visibility = 'hidden';
+});
